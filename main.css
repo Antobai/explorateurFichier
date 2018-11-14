@@ -1,0 +1,9 @@
+body{
+	background-color: black;
+	background-image: url("img.jpg");
+	color: white;
+	font-family: roboto;
+	font-size:25px;
+	margin: 80px;
+	padding: 10px;
+}
