@@ -1,13 +1,9 @@
 body{
 	background-color: black;
+	background-image: url("img.jpg");
+	color: white;
 	font-family: roboto;
 	font-size:25px;
-	color: white;
-	border:solid;
-	border-color: white;
-	margin: 250px;
-	padding: 40px;
-}
-.titlee{
-	font-size: 40px;
+	margin: 80px;
+	padding: 10px;
 }
