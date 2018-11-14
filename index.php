@@ -23,7 +23,8 @@ $arborescence;
 **********************************************************/
 
 // Ici on met à jour la position dans l'arborescence des dossiers (fil d'Arianne)
-if (isset($_GET['arborescence'])){
+// Si il y a des caractère dans le tableau arborescence et si arborescence ne vaut pas /explorateurFichier
+if (isset($_GET['arborescence']) && $_GET['arborescence'] != '/explorateurFichier'){
     
     $arborescence = $_GET['arborescence'];  // On récupere la position actuelle depuis la racine
     
@@ -40,32 +41,28 @@ if (isset($_GET['arborescence'])){
         
         echo '<p><a href="?arborescence='.$retour.'">Retour</a></p>';   // Affiche le bouton retour
        
-        echo  'Arborescence = ' . $arborescence;    //Affiche la variable Arborescence
+        echo  'Arborescence = ' . $arborescence . '<br>';    //Affiche la variable Arborescence
+        echo 'dossier demander = ' . $dossierDemander .'<br>';
         
     }
 
-    // Sinon on reviens a la racine
-    else {
-        echo '<p><a href="./">Retour</a></p>';
-    }
-    
+    // // Sinon on reviens a la racine
+    // else {
+    //     echo '<p><a href="/">Retour</a></p>';
+    // }
 }
 // Si il n'y a pas de variable arborescence dans l'URL alors on affiche ce qui est présent à la racine du localhost
 else {
-    $arborescence = ""; //$arborescence vaut vide
-    $dossierDemander = "../"; // Dossier demander vaut retour
+    $arborescence = "/explorateurFichier"; //$arborescence vaut vide
+    $dossierDemander = "../explorateurFichier"; // Dossier demander vaut retour
     echo '<p><a href="./">Retour</a></p>';  // Afficher le bouton retour
-}
 
+}
 
 /****************************************************
  *******      Affichage du tableau       ************
  ******* Avec les variables dans les URL ************ 
  ****************************************************/
-
-
-
-echo '<ul>';
 
 // si var dossier = ouvre le dossier ($dossierdemander)
 if ($dossier = opendir($dossierDemander)) {
@@ -77,20 +74,20 @@ if ($dossier = opendir($dossierDemander)) {
         if ($fichier != '.' && $fichier != '..' && $fichier != 'index.php')
         {
 
-            if ((is_dir($fichier)) || $fichier == 'explorateurFichier')
+            if (is_dir($dossierDemander."/".$fichier) || $fichier == 'explorateurFichier')
             {
                 $nb_fichier++;
-
                 // Crée un lien pour $arborescence = $arborescence/$fichier et affiche $fichier
                 //                  ?Paramètre  =  valeur
                 echo '<li><a href="?arborescence='.$arborescence.'/'.$fichier.'">' . $fichier . '</a></li>';
             }
-            else if ( $fichier != 'explorateurFichier')
+            else 
             {   // Sinon crée un lien direct vers le fichier
                 $nb_fichier++;
                 //
                 echo '<li><a href=" '.$arborescence.'/'.$fichier.'">' . $fichier . '</a></li>';
             }
+            
 
         } //Fin de if 
 
