@@ -1,7 +1,13 @@
 body{
 	background-color: #9E9CA1;
 	font-family: roboto;
+	font-size:25px;
+	color: white;
 	border:solid;
+	border-color: white;
 	margin: 250px;
 	padding: 40px;
+}
+.titlee{
+	font-size: 40px;
 }
