@@ -34,7 +34,6 @@ if (isset($_GET['arborescence']) && $_GET['arborescence'] != '/explorateurFichie
     //Pour le bouton retour je commence par tester si l'arborescence n'est pas vide
     if ($arborescence != ""){
 
-        
         $retour = strrpos($arborescence, "/");  //strrpos = position du dernier / dans la chaine de caractère arborescence
 
         $retour = substr($arborescence, 0, $retour);    //retour = Chaine de caractère situé avant le dernier "/"
@@ -42,7 +41,7 @@ if (isset($_GET['arborescence']) && $_GET['arborescence'] != '/explorateurFichie
         echo '<p><a href="?arborescence='.$retour.'">Retour</a></p>';   // Affiche le bouton retour
        
         echo  'Arborescence = ' . $arborescence . '<br>';    //Affiche la variable Arborescence
-        echo 'dossier demander = ' . $dossierDemander .'<br>';
+       // echo 'dossier demander = ' . $dossierDemander .'<br>';
         
     }
 
@@ -64,6 +63,7 @@ else {
  ******* Avec les variables dans les URL ************ 
  ****************************************************/
 
+
 // si var dossier = ouvre le dossier ($dossierdemander)
 if ($dossier = opendir($dossierDemander)) {
 
@@ -71,7 +71,7 @@ if ($dossier = opendir($dossierDemander)) {
     while (false !== ($fichier = readdir($dossier))) {
 
         // si le fichier n'est pas le fichier courant ou le parent ou index.php
-        if ($fichier != '.' && $fichier != '..' && $fichier != 'index.php')
+        if ($fichier != '.' && $fichier != '..' && $fichier != 'index.php' && $fichier != '.git' && $fichier != 'main.css' && $fichier != 'main.js')
         {
 
             if (is_dir($dossierDemander."/".$fichier) || $fichier == 'explorateurFichier')
@@ -85,7 +85,8 @@ if ($dossier = opendir($dossierDemander)) {
             {   // Sinon crée un lien direct vers le fichier
                 $nb_fichier++;
                 //
-                echo '<li><a href=" '.$arborescence.'/'.$fichier.'">' . $fichier . '</a></li>';
+                echo '<li> <a target="_blank" href=" '.$arborescence.'/'.$fichier.'">' . $fichier . '</a></li>';
+                echo '<a href="">Fichier</a>';
             }
             
 
@@ -97,7 +98,6 @@ if ($dossier = opendir($dossierDemander)) {
     echo 'Il y a <strong>' . $nb_fichier . '</strong> fichier(s) dans le dossier';
 
     closedir($dossier);
-
 } 
 else
 {
@@ -115,3 +115,11 @@ else
 <script src="main.js"></script>
 </body>
 </html>
+
+<!-- 
+$dossier = scandir ('.') = scandir de sossier courant
+print_r($dossier);
+
+realpath('index.php') = affiche le chemi réel
+
+-->
