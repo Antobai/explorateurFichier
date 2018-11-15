@@ -7,9 +7,16 @@
     <title>Explorateur de fichier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
 </head>
 
 <body>
+    <h1> Explorateur de fichier </h1>
+
+
+
 
 <?php
 $nb_fichier = 0;
@@ -23,6 +30,7 @@ $arborescence;
 **********************************************************/
 
 // Ici on met à jour la position dans l'arborescence des dossiers (fil d'Arianne)
+
 // Si il y a des caractère dans le tableau arborescence et si arborescence ne vaut pas /explorateurFichier
 if (isset($_GET['arborescence']) && $_GET['arborescence'] != '/explorateurFichier'){
     
@@ -32,31 +40,34 @@ if (isset($_GET['arborescence']) && $_GET['arborescence'] != '/explorateurFichie
 
 
     //Pour le bouton retour je commence par tester si l'arborescence n'est pas vide
+  
     if ($arborescence != ""){
 
         $retour = strrpos($arborescence, "/");  //strrpos = position du dernier / dans la chaine de caractère arborescence
 
         $retour = substr($arborescence, 0, $retour);    //retour = Chaine de caractère situé avant le dernier "/"
         
-        echo '<p><a href="?arborescence='.$retour.'">Retour</a></p>';   // Affiche le bouton retour
+        
+        echo '<p><a href="?arborescence='.$retour.'"><i class="fas fa-arrow-left fa-2x"></i></a></p>';   // Affiche le bouton retour
        
-        echo  'Arborescence = ' . $arborescence . '<br>';    //Affiche la variable Arborescence
-       // echo 'dossier demander = ' . $dossierDemander .'<br>';
+        echo  '<div class="arborescence">Arborescence = ' . $arborescence .'</div>';    //Affiche la variable Arborescence
         
     }
 
-    // // Sinon on reviens a la racine
-    // else {
-    //     echo '<p><a href="/">Retour</a></p>';
-    // }
+    // Sinon on reviens a la racine
+    else {
+        echo '<p><a href="./"><i class="fas fa-arrow-left fa-2x"></i></a></p>';
+    }
+    
 }
 // Si il n'y a pas de variable arborescence dans l'URL alors on affiche ce qui est présent à la racine du localhost
 else {
-    $arborescence = "/explorateurFichier"; //$arborescence vaut vide
-    $dossierDemander = "../explorateurFichier"; // Dossier demander vaut retour
-    echo '<p><a href="./">Retour</a></p>';  // Afficher le bouton retour
-
+    $arborescence = ""; //$arborescence vaut vide
+    $dossierDemander = "../"; // Dossier demander vaut retour
+    echo '<p><a href="./"><i class="fas fa-arrow-left fa-2x"></i></a></p>';  // Afficher le bouton retour
 }
+
+
 
 /****************************************************
  *******      Affichage du tableau       ************
@@ -65,6 +76,9 @@ else {
 
 
 // si var dossier = ouvre le dossier ($dossierdemander)
+?>
+<div class="listederoulante">
+    <?php
 if ($dossier = opendir($dossierDemander)) {
 
     // Tant qu'il y a un fichier applique la boucle
@@ -95,10 +109,11 @@ if ($dossier = opendir($dossierDemander)) {
     } //On termine la boucle
 
     echo '</ul><br />';
-    echo 'Il y a <strong>' . $nb_fichier . '</strong> fichier(s) dans le dossier';
+    echo '<span class="nbfichier">Il y a <strong>' . $nb_fichier . '</strong> fichier(s) dans le dossier</span>';
 
     closedir($dossier);
 } 
+
 else
 {
     echo "Le dossier n' a pas pu être ouvert";
@@ -110,6 +125,7 @@ else
 // echo  'fichier = ' . $fichier;
 
 ?>
+</div>
 
 
 <script src="main.js"></script>
