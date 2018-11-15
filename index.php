@@ -7,9 +7,16 @@
     <title>Explorateur de fichier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
 </head>
 
 <body>
+    <h1> Explorateur de fichier </h1>
+
+
+
 
 <?php
 $nb_fichier = 0;
@@ -38,15 +45,15 @@ if (isset($_GET['arborescence'])){
 
         $retour = substr($arborescence, 0, $retour);    //retour = Chaine de caractère situé avant le dernier "/"
         
-        echo '<p><a href="?arborescence='.$retour.'">Retour</a></p>';   // Affiche le bouton retour
+        echo '<p><a href="?arborescence='.$retour.'"><i class="fas fa-arrow-left fa-2x"></i></a></p>';   // Affiche le bouton retour
        
-        echo  'Arborescence = ' . $arborescence;    //Affiche la variable Arborescence
+        echo  '<div class="arborescence">Arborescence = ' . $arborescence .'</div>';    //Affiche la variable Arborescence
         
     }
 
     // Sinon on reviens a la racine
     else {
-        echo '<p><a href="./">Retour</a></p>';
+        echo '<p><a href="./"><i class="fas fa-arrow-left fa-2x"></i></a></p>';
     }
     
 }
@@ -54,7 +61,7 @@ if (isset($_GET['arborescence'])){
 else {
     $arborescence = ""; //$arborescence vaut vide
     $dossierDemander = "../"; // Dossier demander vaut retour
-    echo '<p><a href="./">Retour</a></p>';  // Afficher le bouton retour
+    echo '<p><a href="./"><i class="fas fa-arrow-left fa-2x"></i></a></p>';  // Afficher le bouton retour
 }
 
 
@@ -97,7 +104,7 @@ if ($dossier = opendir($dossierDemander)) {
     } //On termine la boucle
 
     echo '</ul><br />';
-    echo 'Il y a <strong>' . $nb_fichier . '</strong> fichier(s) dans le dossier';
+    echo '<span class="nbfichier">Il y a <strong>' . $nb_fichier . '</strong> fichier(s) dans le dossier</span>';
 
     closedir($dossier);
 
