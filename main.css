@@ -50,7 +50,7 @@ table {
 
 
 
-/* fin resete css */
+/* fin reset css */
 
 
 body{
@@ -58,26 +58,57 @@ body{
     width:90%;
     margin-right:5%;
     position: absolute;
-    background-color:gray
+    background-color:red;
     
 }
+
 h1{
-    font-size:3em;
+font-size:3em;
+text-align:center;
 }
+
 .nbfichier{
 color:blue;
 bottom:0;
 position:fixed;
+background-color: grey;
+border:1px solid;
+left:5%
 
 }
+
 .arborescence{
-    background-color:grey;
+    
     width:40%;
     position:relative;
     left:124px;
     top:24px;
 }
-.fa-arrow-left{
+
+.fas{
     top:50px;
-    position:relative;
+	position:relative;
+	
+	color:#7f8080;
+}
+
+li{
+list-style-type: none; 
+margin-top:20px;
+
+top:100px;
+}
+.listederoulante{
+	top:65px;
+	position:relative;
+	background-color:white;
+	width:;
+	border:solid;
+	padding-left:20px;
+	border-color:#6b5757;
+	display:inline-block;
+	padding-right:20px;
+}
+.barre{
+	background-color:blue;
 }
