@@ -12,7 +12,6 @@
 
 <body>
 <h1>Explorateur de Fichier PHP</h1>
-<section>
 <?php
 $nb_fichier = 0;
 $dossierDemander;
@@ -117,10 +116,9 @@ else
 //  var_dump($path_parts);
 // echo  'fichier = ' . $fichier;
 
-?>
-</div>
-</section>
 
+
+?>
 <script src="main.js"></script>
 </body>
 </html>
