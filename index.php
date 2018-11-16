@@ -12,6 +12,7 @@
 
 <body>
 <h1>Explorateur de Fichier PHP</h1>
+<section>
 <?php
 $nb_fichier = 0;
 $dossierDemander;
@@ -116,7 +117,7 @@ else
 
 ?>
 </div>
-
+</section>
 
 <script src="main.js"></script>
 </body>
