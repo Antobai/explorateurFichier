@@ -60,6 +60,10 @@ body{
 h1{
 font-size:3em;
 text-align:center;
+font-weight: bold;
+color: rgb(255, 187, 0);
+font-family: Georgia, Times, 'Times New Roman', serif;
+font-variant: small-caps;
 }
 
 .nbfichier{
@@ -74,7 +78,9 @@ left:5%
 
 .arborescence{
     
-    color: blue;
+	color: rgb(0, 0, 0);
+	background-color: #e9c382;
+	width: 100%;
 }
 
 .fas{
@@ -93,7 +99,7 @@ top:100px;
 .listederoulante{
 	top:65px;
 	position:relative;
-	background-color:white;
+	background-color:rgba(255, 255, 255, 0.582);
 	border:solid;
 	padding-left:20px;
 	border-color:#6b5757;

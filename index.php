@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1></h1>
+<h1>Explorateur de Fichier PHP</h1>
 <?php
 $nb_fichier = 0;
 $dossierDemander;
@@ -42,7 +42,7 @@ if (isset($_GET['arborescence']) && $_GET['arborescence'] != '/explorateurFichie
         
         echo '<p><a href="?arborescence='.$retour.'"><i class="fas fa-arrow-left fa-2x"></i></a></p>';
        
-        echo '<div class="arborescence">Arborescence = ' . $arborescence .'</div>'; //Affiche la variable Arborescence
+        echo '<div class="arborescence">' . $arborescence .'</div>'; //Affiche la variable Arborescence
 
        // echo 'dossier demander = ' . $dossierDemander .'<br>';
         
