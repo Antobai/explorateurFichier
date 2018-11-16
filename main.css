@@ -114,16 +114,21 @@ top:100px;
 	position:relative;
 }
 .nombredossier{
-	bottom:0;
-	left:5%;
+	bottom:5px;
 	position: fixed;
-	border:1px solid black;
+	border:1px solid #6b5757;
 	padding-top:5px;
 	padding-bottom:5px;
 	padding-left:5px;
 	padding-right:5px;
+	background-color:rgba(255, 255, 255, 0.582);
 }
 .fichier{
 	width:40px;
 	position:relative;
+}
+a{
+	text-decoration:none;
+	color:black;
+	font-size: 1.66em;
 }
