@@ -77,9 +77,7 @@ padding-top: 20px;
 }
 
 .fas{
-    top:50px;
 	position:relative;
-	
 	color:#7f8080;
 }
 
@@ -89,10 +87,10 @@ margin-top:20px;
 width: 250px;
 height: 100px;
 top:100px;
+
 }
 .listederoulante{
 	top:65px;
-	position:relative;
 	background-color:rgba(255, 255, 255, 0.582);
 	border:solid;
 	padding-left:20px;
@@ -101,7 +99,9 @@ top:100px;
 	padding-right:20px;
 	margin-bottom: 100px;
 	display: flex;
-	justify-content: flex-start;
+	flex-wrap: wrap;
+	justify-content: center;
+	
 }
 
 .barre{
@@ -131,4 +131,5 @@ a{
 	text-decoration:none;
 	color:black;
 	font-size: 1.66em;
+	margin: 20px;
 }
