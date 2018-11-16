@@ -42,7 +42,7 @@ if (isset($_GET['arborescence']) && $_GET['arborescence'] != '/explorateurFichie
         
         echo '<p><a href="?arborescence='.$retour.'"><i class="fas fa-arrow-left fa-2x"></i></a></p>';
        
-        echo '<div class="arborescence">Arborescence = ' . $arborescence .'</div>'; //Affiche la variable Arborescence
+        echo '<div class="arborescence"> ' . $arborescence .'</div>'; //Affiche la variable Arborescence
 
        // echo 'dossier demander = ' . $dossierDemander .'<br>';
         
@@ -85,13 +85,13 @@ if ($dossier = opendir($dossierDemander)) {
                 $nb_fichier++;
                 // Crée un lien pour $arborescence = $arborescence/$fichier et affiche $fichier
                 //                  ?Paramètre  =  valeur
-                echo '<li><a href="?arborescence=' .$arborescence. '/' .$fichier. '">' . $fichier . '</a></li>';
+                echo '<li><a href="?arborescence=' .$arborescence. '/' .$fichier. '"><img class="dossier" src="dossier.jpg">' . $fichier . '</a></li>';
             }
             else 
             {   // Sinon crée un lien direct vers le fichier
                 $nb_fichier++;
                 //
-                echo '<li><a href=" ' .$arborescence.'/' .$fichier. '">' . $fichier . '</a></li>';
+                echo '<li><a href=" ' .$arborescence.'/' .$fichier. '"><img class="fichier" src="fichier.png">' . $fichier . '</a></li>';
             }
             
 
@@ -100,7 +100,7 @@ if ($dossier = opendir($dossierDemander)) {
     } //On termine la boucle
 
     echo '</ul><br />';
-    echo 'Il y a <strong>' . $nb_fichier . '</strong> fichier(s) dans le dossier';
+    echo '<div class="nombredossier">Il y a <strong>' . $nb_fichier . '</strong> élément(s) dans le dossier</div>';
 
     closedir($dossier);
 } 

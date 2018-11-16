@@ -1,2 +1,0 @@
-Test de fichier texte a afficher
-Ligne 2 du fichier

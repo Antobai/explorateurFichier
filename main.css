@@ -62,15 +62,7 @@ font-size:3em;
 text-align:center;
 }
 
-.nbfichier{
-color:blue;
-bottom:0;
-position:fixed;
-background-color: rgb(231, 3, 3);
-border:1px solid;
-left:5%
 
-}
 
 .arborescence{
     
@@ -102,4 +94,24 @@ top:100px;
 }
 .barre{
 	background-color:blue;
+}
+/* body{
+	cursor: url(""), pointer;} */
+.dossier{
+	width:40px;
+	position:relative;
+}
+.nombredossier{
+	bottom:0;
+	left:5%;
+	position: fixed;
+	border:1px solid black;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:5px;
+	padding-right:5px;
+}
+.fichier{
+	width:40px;
+	position:relative;
 }
