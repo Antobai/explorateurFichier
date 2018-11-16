@@ -73,7 +73,7 @@ padding-top: 20px;
     
 	color: rgb(0, 0, 0);
 	background-color: #e9c382;
-	width: 100%;
+	position:relative;
 }
 
 .fas{
@@ -83,10 +83,10 @@ padding-top: 20px;
 
 li{
 list-style-type: none; 
-margin-top:20px;
-width: 250px;
+margin: 0 80px;
 height: 100px;
 top:100px;
+
 
 }
 .listederoulante{
@@ -112,6 +112,7 @@ top:100px;
 .dossier{
 	width:40px;
 	position:relative;
+
 }
 .nombredossier{
 	bottom:5px;
@@ -126,10 +127,18 @@ top:100px;
 .fichier{
 	width:40px;
 	position:relative;
+	display:block;
 }
+
 a{
 	text-decoration:none;
 	color:black;
 	font-size: 1.66em;
-	margin: 20px;
+	
+	display:block;
+	
+}
+li img{
+	display:block;
+	margin: 0 auto ;
 }
