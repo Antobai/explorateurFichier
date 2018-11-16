@@ -115,7 +115,7 @@ top:100px;
 }
 .nombredossier{
 	bottom:5px;
-	position: absolute;
+	position: fixed;
 	border:1px solid #6b5757;
 	padding: 5px;
 	background-color:rgba(255, 255, 255, 0.582);
@@ -130,7 +130,7 @@ top:100px;
 	background-color:rgba(255, 255, 255, 0.582);
 	font-size: 1em;
 	padding: 5px;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 }
 
@@ -143,7 +143,7 @@ top:100px;
 li a{
 	text-decoration:none;
 	color:rgb(245, 245, 245);
-	margin: 10px 0;
+	margin: 20px 0;
 	font-size: 1.66em;
 	text-align: center;
 	display:block;
