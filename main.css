@@ -55,6 +55,7 @@ body{
     position: absolute;
 	background-image: url(fdecran.jpg);
 	background-size:cover;
+	background-repeat: no-repeat;
     
 }
 
