@@ -49,39 +49,34 @@ table {
 
 
 body{
-    margin-left:5%;
-    width:90%;
-    margin-right:5%;
-    position: absolute;
 	background-image: url(fdecran.jpg);
 	background-size:cover;
-	background-repeat: no-repeat;
-    
+    margin: 0 auto;
 }
 
-h1{
-font-size:3em;
-text-align:center;
-font-weight: bold;
-color: rgb(255, 187, 0);
-font-family: Georgia, Times, 'Times New Roman', serif;
-font-variant: small-caps;
-padding-top: 20px;
-}
+#titre{
+	font-size:3em;
+	text-align:center;
+	font-weight: bold;
+	color: #1f21a0;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-variant: small-caps;
+	padding: 5px;
+	margin-bottom: 30px;
+	background-color:  rgba(0, 0, 0, 0.651);
+	border: groove  #1b1eac;;
+	}
 
-
-
-.arborescence{
-    
-	color: rgb(211, 214, 16);
-	background-color: #6b575700;
-	font-size: 1.5em;
-	margin-bottom: 5px;
-}
 
 .fas{
-	position:relative;
-	color:#7f8080;
+	position:absolute;
+	color:#ffffff;
+	top: 40px;
+	left: 40px;
+	background-color: #000000e0;
+	padding: 10px;
+	border-radius: 100%;
+	border: groove  #1b1eac;;
 }
 
 li{
@@ -93,11 +88,12 @@ top:100px;
 
 }
 .listederoulante{
+	margin: 0 10%;
 	top:65px;
-	background-color:rgba(255, 255, 255, 0.397);
+	background-color:rgba(0, 0, 0, 0.651);
 	border:solid;
 	padding-left:20px;
-	border-color:#6b5757;
+	border: groove  #1b1eac;;
 	display:inline-block;
 	padding-right:20px;
 	margin-bottom: 100px;
@@ -119,26 +115,39 @@ top:100px;
 }
 .nombredossier{
 	bottom:5px;
-	position: fixed;
+	position: absolute;
 	border:1px solid #6b5757;
-	padding-top:5px;
-	padding-bottom:5px;
-	padding-left:5px;
-	padding-right:5px;
+	padding: 5px;
 	background-color:rgba(255, 255, 255, 0.582);
+	bottom: 0;
+	right: 0;
 }
+
+.arborescence{
+    
+	color: rgb(0, 0, 0);
+	background-color: #616161b7;
+	background-color:rgba(255, 255, 255, 0.582);
+	font-size: 1em;
+	padding: 5px;
+	position: absolute;
+	bottom: 0;
+}
+
 .fichier{
 	width:40px;
 	position:relative;
 	display:block;
 }
 
-a{
+li a{
 	text-decoration:none;
-	color:black;
+	color:rgb(245, 245, 245);
+	margin: 10px 0;
 	font-size: 1.66em;
-	
+	text-align: center;
 	display:block;
+	width: 150px;
 	
 }
 li img{

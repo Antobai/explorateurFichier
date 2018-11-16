@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<h1>Explorateur de Fichier PHP</h1>
+<div id="titre">Explorateur de Fichier PHP</div>
 <?php
 $nb_fichier = 0;
 $dossierDemander;
