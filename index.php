@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title class="">Explorateur de fichier</title>
+    <title>Explorateur de fichier</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -85,7 +85,7 @@ if ($dossier = opendir($dossierDemander)) {
                 $nb_fichier++;
                 // Crée un lien pour $arborescence = $arborescence/$fichier et affiche $fichier
                 //                  ?Paramètre  =  valeur
-                echo '<li><a href="?arborescence=' .$arborescence. '/' .$fichier. '"><img class="dossier" src="dossier.jpg">' . $fichier . '</a></li>';
+                echo '<li><a href="?arborescence=' .$arborescence. '/' .$fichier. '"><img class="dossier" src="dossier.png">' . $fichier . '</a></li>';
             }
             else 
             {   // Sinon crée un lien direct vers le fichier
@@ -97,7 +97,9 @@ if ($dossier = opendir($dossierDemander)) {
 
         } //Fin de if 
 
-    } //On termine la boucle
+    }?>
+    </div>
+    <?php //On termine la boucle
 
     echo '</ul><br />';
     echo '<div class="nombredossier">Il y a <strong>' . $nb_fichier . '</strong> élément(s) dans le dossier</div>';
@@ -114,10 +116,9 @@ else
 //  var_dump($path_parts);
 // echo  'fichier = ' . $fichier;
 
+
+
 ?>
-</div>
-
-
 <script src="main.js"></script>
 </body>
 </html>
