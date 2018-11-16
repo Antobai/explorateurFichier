@@ -53,7 +53,8 @@ body{
     width:90%;
     margin-right:5%;
     position: absolute;
-	background-image: url(Images/carte2.jpg);
+	background-image: url(fdecran.jpg);
+	background-size:cover;
     
 }
 
